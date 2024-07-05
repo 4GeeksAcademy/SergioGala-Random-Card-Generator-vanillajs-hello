@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hello Rigo with Vanilla.js</title>
+    <title>Casino 4geeks</title>
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
@@ -11,18 +11,52 @@
       crossorigin="anonymous"
     />
     <link rel="shortcut icon" href="./4geeks.ico" />
+
+    <style>
+      body {
+        background-image: url("src/assets/img/red-rock-top-las-vegas-casino.jpg");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        margin: 0;
+        font-family: Arial, sans-serif;
+      }
+      .container-fluid {
+        padding-top: 50px; /* Espacio superior para evitar que el contenido se superponga con la imagen de fondo */
+      }
+      .poker-button {
+        background-color: #286d37;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 25px;
+        text-decoration: none;
+        display: inline-block;
+        margin-top: 20px;
+      }
+      .poker-button:hover {
+        background-color: #286d37a8;
+      }
+      .footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 10px 0;
+        text-align: center;
+        color: rgb(1, 255, 35);
+      }
+    </style>
   </head>
   <body>
     <div class="container-fluid text-center">
-      <h1 class="mt-5">Hello Rigo!</h1>
-      <img src="./rigo-baby.jpg" />
-      <p class="alert alert-warning mt-4">
-        If this text is <b>not</b> centered and <b>yellow</b>, you probably have
-        an error
-      </p>
-      <div class="fixed-bottom p-4">
+      <img src="src/assets/img/41yuc6B58fL._AC_UF894,1000_QL80_.jpg" />
+      <button class="poker-button mt-4">Play Poker Now</button>
+      <div class="fixed-bottom p-4 footer">
         Made with ❤️ by
-        <a href="https://www.4geeksacademy.com">4Geeks Academy</a>
+        <a href="https://github.com/SergioGala">SergioGala</a>
       </div>
     </div>
   </body>
