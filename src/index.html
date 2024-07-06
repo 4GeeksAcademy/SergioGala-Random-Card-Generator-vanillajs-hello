@@ -87,10 +87,28 @@
 
       .card .suit {
         position: absolute;
-        top: 1px;
-        left: 10px;
         font-size: 40px;
         z-index: 1;
+      }
+
+      .card .top-left {
+        top: 1px;
+        left: 10px;
+      }
+
+      .card .top-right {
+        top: 1px;
+        right: 10px;
+      }
+
+      .card .bottom-left {
+        bottom: 1px;
+        left: 10px;
+      }
+
+      .card .bottom-right {
+        bottom: 1px;
+        right: 10px;
       }
 
       .card .suit.red {
@@ -127,7 +145,10 @@
     <div class="container">
       <div class="card-container" id="cardContainer"></div>
       <button id="toggleButton" class="poker-button mt-4">
-        All-in desde Utg+1 (comienza la generacion de cartas)
+        All-in desde Utg+1 (comienza el bucle de generacion de cartas)
+      </button>
+      <button id="randomButton" class="poker-button mt-4">
+        Generador de cartas automatica
       </button>
     </div>
     <div class="fixed-bottom">

@@ -25,14 +25,17 @@ function generateRandomCard() {
   const randomRank = ranks[Math.floor(Math.random() * ranks.length)];
   const randomSuit = suits[Math.floor(Math.random() * suits.length)];
 
-  // Determinar si el palo es rojo para aplicar la clase correspondiente
   const isRedSuit = randomSuit === "&hearts;" || randomSuit === "&diams;";
   const suitClass = isRedSuit ? "red" : "";
 
+  // Las variables del palo (${randomSuit}) pueden ser suprimidas si se desea, ya que solo son necesarias para aplicar clases dinámicas de estilo
   const cardHtml = `
     <div class="card">
+      <div class="top-left suit ${suitClass}">${randomSuit}</div>
+      <div class="top-right suit ${suitClass}">${randomSuit}</div> 
       <div class="rank">${randomRank}</div>
-      <div class="suit ${suitClass}">${randomSuit}</div>
+      <div class="bottom-left suit ${suitClass}">${randomSuit}</div>
+      <div class="bottom-right suit ${suitClass}">${randomSuit}</div>
     </div>
   `;
 
@@ -60,7 +63,8 @@ function toggleAutoGenerate() {
   } else {
     // Iniciar la generación automática cada 5 segundos
     intervalId = setInterval(generateRandomCard, 5000);
-    button.textContent = "Deten la generacion";
+    button.textContent =
+      "Crupier para ya de tirar cartas pls(En el primer ciclo tira 5 max)luego el bucle se puede volver a lanzar para que sea";
   }
 }
 
@@ -68,3 +72,29 @@ function toggleAutoGenerate() {
 document
   .getElementById("toggleButton")
   .addEventListener("click", toggleAutoGenerate);
+
+// Función para generar una sola carta aleatoria
+function generateSingleCard() {
+  const randomRank = ranks[Math.floor(Math.random() * ranks.length)];
+  const randomSuit = suits[Math.floor(Math.random() * suits.length)];
+  const suitClass =
+    randomSuit === "&hearts;" || randomSuit === "&diams;" ? "red" : "";
+
+  const cardHtml = `
+    <div class="card">
+      <div class="top-left suit ${suitClass}">${randomSuit}</div>
+      <div class="rank">${randomRank}</div>
+      <div class="bottom-right suit ${suitClass}">${randomSuit}</div>
+      <div class="top-right suit ${suitClass}">${randomSuit}</div>
+      <div class="bottom-left suit ${suitClass}">${randomSuit}</div>
+    </div>
+  `;
+
+  // Agregar la carta al contenedor
+  document.getElementById("cardContainer").innerHTML += cardHtml;
+}
+
+// Asignar evento click al botón para generar una carta aleatoria
+document
+  .getElementById("randomButton")
+  .addEventListener("click", generateSingleCard);
