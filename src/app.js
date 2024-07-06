@@ -25,10 +25,14 @@ function generateRandomCard() {
   const randomRank = ranks[Math.floor(Math.random() * ranks.length)];
   const randomSuit = suits[Math.floor(Math.random() * suits.length)];
 
+  // Determinar si el palo es rojo para aplicar la clase correspondiente
+  const isRedSuit = randomSuit === "&hearts;" || randomSuit === "&diams;";
+  const suitClass = isRedSuit ? "red" : "";
+
   const cardHtml = `
     <div class="card">
       <div class="rank">${randomRank}</div>
-      <div class="suit">${randomSuit}</div>
+      <div class="suit ${suitClass}">${randomSuit}</div>
     </div>
   `;
 
